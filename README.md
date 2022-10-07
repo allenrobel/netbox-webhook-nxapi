@@ -114,7 +114,7 @@ Go back to your terminal where you started webhook.  You should see some output 
 [webhook] 2022/10/06 18:34:21 [075319] update-interface got matched
 [webhook] 2022/10/06 18:34:21 [075319] update-interface hook triggered successfully
 [webhook] 2022/10/06 18:34:21 Completed 200 OK in 391.854µs
-[webhook] 2022/10/06 18:34:21 [075319] executing /home/admin1/arobel/webhooks/update-interface.bash (/home/admin1/arobel/webhooks/update-interface.bash) with arguments ["/home/admin1/arobel/webhooks/update-interface.bash" "cvd_leaf_1" "Ethernet1/1" "10" "Web Servers" "9216" "false"] and environment [] using /home/admin1/arobel/webhooks as cwd
+[webhook] 2022/10/06 18:34:21 [075319] executing /home/admin1/arobel/netbox-webhook-nxapi/update-interface.bash (/home/admin1/arobel/netbox-webhook-nxapi/update-interface.bash) with arguments ["/home/admin1/arobel/netbox-webhook-nxapi/update-interface.bash" "cvd_leaf_1" "Ethernet1/1" "10" "Web Servers" "9216" "false"] and environment [] using /home/admin1/arobel/netbox-webhook-nxapi as cwd
 [webhook] 2022/10/06 18:34:26 [075319] command output: 
 [webhook] 2022/10/06 18:34:26 [075319] finished handling update-interface
 ```
