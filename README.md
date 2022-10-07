@@ -37,6 +37,15 @@ sudo apt install webhook
 
 If you move nxapi.py to a different location, add that location to your PYTHONPATH; either in update-interface.bash, or in your .bash_profile, etc.
 
+### 5. Edit ``hooks.json``
+
+Change ``execute-command`` to point to where ``update-interface.bash`` lives on your server.
+
+"execute-command": "/home/admin1/arobel/webhooks/update-interface.bash"
+
+Change ``command-working-directory`` to this repo's directory.
+
+
 ### 5. Start webhook
 
 Specify the port you'll configure Netbox to use (8888 in the below examples)
