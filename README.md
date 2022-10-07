@@ -83,7 +83,7 @@ We'll configure Netbox below to trigger a webhook if dcim.interfaces changes
 - For URL*, use http://your_server:8888/hooks/update-interface
 
 Replace ``your_server`` with the hostname or ip address of your server.
-Replace ``8888`` with the port you used in set step 5 above.
+Replace ``8888`` with the port you used in step 5 above.
 
 - Make sure HTTP Method* is ``POST``
 - Make sure HTTP content type* is ``application/json``
