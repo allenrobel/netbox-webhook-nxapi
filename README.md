@@ -46,7 +46,7 @@ Change ``execute-command`` to point to where ``update-interface.bash`` lives on 
 Change ``command-working-directory`` to this repo's directory.
 
 
-### 5. Start webhook
+### 6. Start webhook
 
 Specify the port you'll configure Netbox to use (8888 in the below examples)
 
@@ -62,7 +62,7 @@ Else, if installed using apt:
 webhook -hooks hooks.json -port 8888 --verbose
 ```
 
-### 6. Configure Netbox
+### 7. Configure Netbox
 
 We'll configure Netbox below to trigger a webhook if dcim.interfaces changes
 
@@ -88,7 +88,7 @@ Replace ``8888`` with the port you used in set step 5 above.
 
 #### - Scroll down to the bottom of the page and click ``Save``
 
-### 7. Update an interface in Netbox
+### 8. Update an interface in Netbox
 
 If you do this manually, follow the steps below.  Else, if you'd like to try my [netbox-tools], you can use the ``interface_create_update.py`` script.  Below is an example for that:
 
@@ -107,7 +107,7 @@ If you do this manually, follow the steps below.  Else, if you'd like to try my 
 
 #### - Click ``Save``
 
-### 8. Check that the webhook fired
+### 9. Check that the webhook fired
 
 Go back to your terminal where you started webhook.  You should see some output that looks similar to:
 
@@ -122,7 +122,7 @@ Go back to your terminal where you started webhook.  You should see some output 
 [webhook] 2022/10/06 18:34:26 [075319] finished handling update-interface
 ```
 
-### 9. Check the NX-OS switch manually
+### 10. Check the NX-OS switch manually
 
 Verify the interface configuration changed ``show running-config interface X/Y``
 Verify the accounting log ``show accounting log``
