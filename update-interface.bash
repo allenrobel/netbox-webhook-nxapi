@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # If you move nxapi.py to some other location, add that to your PYTHONPATH
 # Either in this script, or e.g. in your bash config, etc.
-export PYTHONPATH="$PYTHONPATH:/home/admin1/arobel/lib/python"
+#export PYTHONPATH="$PYTHONPATH:/path/to/where/you/moved/nxapi.py"
 # password for NX-OS switches
 PASSWORD='your_nxos_password'
 USERNAME='admin'
