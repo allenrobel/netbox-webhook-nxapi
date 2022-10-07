@@ -31,7 +31,14 @@ sudo apt install webhook
 
 ### 2. cd into the directory where you downloaded this repo
 
-### 3. Edit update-interface.bash with your NX-OS username and password
+### 3. Edit update-interface.bash
+
+Change the following with your NX-OS username and password:
+
+```bash
+PASSWORD='your_nxos_password'
+USERNAME='admin'
+```
 
 ### 4. Optionally, update your PYTHONPATH
 
@@ -66,27 +73,20 @@ webhook -hooks hooks.json -port 8888 --verbose
 
 We'll configure Netbox below to trigger a webhook if dcim.interfaces changes
 
-#### - In the Netbox sidebar, scroll down and click "Other" then "Webhooks"
-
-#### - Click "Add" in the Webhooks pane.
-
-#### - For Name* use ``update-interface``
-
-#### - For Content Types* select ``DCIM > interface`` from the drop-down menu
-
-#### - Make sure ``Enabled`` is checked.
-
-#### - Under Events, check ``Creations`` and ``Updates``
-
-#### - For URL*, use http://your_server:8888/hooks/update-interface
+- In the Netbox sidebar, scroll down and click "Other" then "Webhooks"
+- Click "Add" in the Webhooks pane.
+- For Name* use ``update-interface``
+- For Content Types* select ``DCIM > interface`` from the drop-down menu
+- Make sure ``Enabled`` is checked.
+- Under Events, check ``Creations`` and ``Updates``
+- For URL*, use http://your_server:8888/hooks/update-interface
 
 Replace ``your_server`` with the hostname or ip address of your server.
 Replace ``8888`` with the port you used in set step 5 above.
 
-#### - Make sure HTTP Method* is ``POST``
-#### - Make sure HTTP content type* is ``application/json``
-
-#### - Scroll down to the bottom of the page and click ``Save``
+- Make sure HTTP Method* is ``POST``
+- Make sure HTTP content type* is ``application/json``
+- Scroll down to the bottom of the page and click ``Save``
 
 ### 8. Update an interface in Netbox
 
@@ -97,15 +97,11 @@ If you do this manually, follow the steps below.  Else, if you'd like to try my 
 ```
 
 
-#### - Read the Netbox documentation for adding devices and interfaces if you don't already have a device/interface configured.
-
-#### - Under ``Devices`` in the Netbox sidebar, select ``Interfaces`` (or select a device and then select its interface from the device interface tab)
-
-#### - Click the interface to edit (in this case, we are configuring the vlan on access mode interfaces, so select an access interface)
-
-#### - Make change(s) to the interface (one or more of Description, MTU, Enabled, or Untagged VLAN)
-
-#### - Click ``Save``
+- Read the Netbox documentation for adding devices and interfaces if you don't already have a device/interface configured.
+- Under ``Devices`` in the Netbox sidebar, select ``Interfaces`` (or select a device and then select its interface from the device interface tab)
+- Click the interface to edit (in this case, we are configuring the vlan on access mode interfaces, so select an access interface)
+- Make change(s) to the interface (one or more of Description, MTU, Enabled, or Untagged VLAN)
+- Click ``Save``
 
 ### 9. Check that the webhook fired
 
@@ -124,8 +120,8 @@ Go back to your terminal where you started webhook.  You should see some output 
 
 ### 10. Check the NX-OS switch manually
 
-Verify the interface configuration changed ``show running-config interface X/Y``
-Verify the accounting log ``show accounting log``
+- Verify the interface configuration changed ``show running-config interface X/Y``
+- Verify the accounting log ``show accounting log``
 
 
 [netbox-tools]: https://github.com/allenrobel/netbox-tools
