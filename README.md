@@ -48,10 +48,11 @@ If you move nxapi.py to a different location, add that location to your PYTHONPA
 
 Change ``execute-command`` to point to where ``update-interface.bash`` lives on your server.
 
-"execute-command": "/home/admin1/arobel/webhooks/update-interface.bash"
+``"execute-command": "/home/arobel/netbox-webhook-nxapi/update-interface.bash",``
 
-Change ``command-working-directory`` to this repo's directory.
+Change ``command-working-directory`` to this repo's directory on your server.
 
+``"command-working-directory": "/home/arobel/netbox-webhook-nxapi",``
 
 ### 6. Start webhook
 
