@@ -1,0 +1,47 @@
+[
+  {
+    "id": "update-interface",
+    "execute-command": "/home/admin1/arobel/webhooks/update-interface.bash",
+    "command-working-directory": "/home/admin1/arobel/webhooks",
+    "pass-arguments-to-command": [
+      {
+        "source": "payload",
+        "name": "data.device.name"
+      },
+      {
+        "source": "payload",
+        "name": "data.name"
+      },
+      {
+        "source": "payload",
+        "name": "data.untagged_vlan.vid"
+      },
+      {
+        "source": "payload",
+        "name": "data.description"
+      },
+      {
+        "source": "payload",
+        "name": "data.mtu"
+      },
+      {
+        "source": "payload",
+        "name": "data.enabled"
+      }
+    ],
+    "trigger-rule":
+    {
+      "match": 
+      {
+        "type": "value",
+        "value": "access",
+        "parameter": 
+        {
+          "source": "payload",
+          "name": "data.mode.value"
+        }
+      }
+  }
+  }
+]
+
